@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calculator Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="displays">
+        <div class="retirement-display display">
+          <h2 class="retirement--title">Retirement Calculator</h2>
+          <form action="" class="retirement-form">
+            <div class="age-container">
+              <label class="custom-field current-age">
+                <input type="number" placeholder=" " name="cage" required />
+                <span class="placeholder">Age</span>
+              </label>
+              <label class="custom-field retirement-age">
+                <input type="number" placeholder=" " name="rage" required />
+                <span class="placeholder">Retirement Age</span>
+              </label>
+            </div>
+            <label class="custom-field">
+              <input
+                type="number"
+                placeholder=" "
+                name="totalsavings"
+                required
+              />
+              <span class="placeholder">Current Savings</span>
+            </label>
+            <label class="custom-field">
+              <input
+                type="number"
+                placeholder=" "
+                name="monthlysavings"
+                required
+              />
+              <span class="placeholder">Monthly Savings</span>
+            </label>
+            <label class="custom-field">
+              <input
+                type="number"
+                placeholder=" "
+                name="interest"
+                step="0.01"
+                required
+              />
+              <span class="placeholder">Interest</span>
+            </label>
+            <input type="submit" value="Calculate" class="retirement-submit" />
+          </form>
+          <p class="mortgage-output--title">Retirement savings:</p>
+          <div class="retirement-output"></div>
+        </div>
+        <div class="mortgage-display display">
+          <form action="" class="mortgage-form">
+            <h2 class="mortgage-form--title">Mortgage Calculator</h2>
+            <label class="custom-field">
+              <input
+                type="number"
+                placeholder=" "
+                name="loan-amount"
+                required
+              />
+              <span class="placeholder">Loan Amount</span>
+            </label>
+            <label class="custom-field">
+              <input
+                type="number"
+                placeholder=" "
+                name="interest"
+                step="0.01"
+                required
+              />
+              <span class="placeholder">Interest Rate</span>
+            </label>
+            <div class="custom-select">
+              <select class="loan-type" name="loan-type" required>
+                <option value="30-Year-Fixed">30 Year Fixed</option>
+                <option value="20-Year-Fixed">20 Year Fixed</option>
+                <option value="15-Year-Fixed">15 Year Fixed</option>
+                <option value="10-1-Arm">10 / 1 Arm</option>
+              </select>
+              <span class="custom-arrow">
+                <i class="fas fa-angle-down"></i>
+              </span>
+            </div>
+            <input type="submit" value="Calculate" class="mortgage-submit" />
+          </form>
+          <p class="mortgage-output--title">Monthly Payment:</p>
+          <div class="mortgage-output"></div>
+        </div>
+        <div class="basic--display display display-active">
+          <div class="small-output"></div>
+          <div class="main-output">0</div>
+        </div>
+      </div>
+      <div class="controls">
+        <h2 class="mode-control-title">Choose calculator mode</h2>
+        <div class="mode">
+          <div class="btn-row">
+            <div class="btn-mode btn-mode-active" data-mode="calculator">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="btn-mode" data-mode="mortgage">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="btn-mode" data-mode="retirement">
+              <i class="fas fa-chart-line"></i>
+            </div>
+          </div>
+        </div>
+        <div class="control-btns--container">
+          <div class="btn-row">
+            <div class="control-btns" data-type="clear">C</div>
+            <div class="control-btns" data-key="posNeg" data-type="special">
+              &plusmn;
+            </div>
+            <div class="control-btns" data-key="percent" data-type="special">
+              %
+            </div>
+            <div class="control-btns" data-key="divide" data-type="operator">
+              &divide;
+            </div>
+          </div>
+          <div class="btn-row">
+            <div class="control-btns" data-type="number">7</div>
+            <div class="control-btns" data-type="number">8</div>
+            <div class="control-btns" data-type="number">9</div>
+            <div class="control-btns" data-key="times" data-type="operator">
+              x
+            </div>
+          </div>
+          <div class="btn-row">
+            <div class="control-btns" data-type="number">4</div>
+            <div class="control-btns" data-type="number">5</div>
+            <div class="control-btns" data-type="number">6</div>
+            <div class="control-btns" data-key="minus" data-type="operator">
+              -
+            </div>
+          </div>
+          <div class="btn-row">
+            <div class="control-btns" data-type="number">1</div>
+            <div class="control-btns" data-type="number">2</div>
+            <div class="control-btns" data-type="number">3</div>
+            <div class="control-btns" data-key="plus" data-type="operator">
+              +
+            </div>
+          </div>
+          <div class="btn-row">
+            <div class="control-btns" data-type="special" data-key="backspace">
+              &larr;
+            </div>
+            <div class="control-btns" data-type="number">0</div>
+            <div class="control-btns" data-key="period" data-type="number">
+              .
+            </div>
+            <div class="control-btns" data-type="equals">=</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="modes.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

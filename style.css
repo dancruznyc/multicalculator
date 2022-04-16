@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    to left top,
+    #252525,
+    #2e2e2e,
+    #383838,
+    #424242,
+    #4c4c4c
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+.container {
+  width: 90rem;
+  height: 60rem;
+  background-image: linear-gradient(
+    to left top,
+    #212020,
+    #252425,
+    #292929,
+    #2e2d2e,
+    #323232
+  );
+  border-radius: 20px;
+
+  box-shadow: 13px 15px 22px 7px rgba(0, 0, 0, 0.67), inset 2px 2px 8px #5b5b5b,
+    inset -2px -2px 8px #000;
+  /* -webkit-box-shadow: 13px 15px 22px 7px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 13px 15px 22px 7px rgba(0, 0, 0, 0.67); */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.displays {
+  width: 40%;
+  height: 85%;
+  border-radius: 20px;
+
+  background-image: linear-gradient(
+    to right bottom,
+    #212121,
+    #1b1b1b,
+    #141414,
+    #0c0c0c,
+    #000000
+  );
+  box-shadow: inset -1px -1px 4px #5b5b5b, inset 1px 1px 4px #000;
+}
+
+.mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode-control-title {
+  color: #a49fa1;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.mortgage-form--title {
+  width: 25rem;
+}
+
+.mortgage-output--title {
+  font-size: 2rem;
+  text-align: left;
+  width: 25rem;
+}
+
+.btn-row {
+  display: flex;
+}
+
+.btn-mode {
+  width: 8rem;
+  height: 6rem;
+  color: #a49fa1;
+  font-size: 3rem;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 6rem;
+  margin: 1rem;
+  box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.67);
+  background-image: linear-gradient(
+    to right bottom,
+    #212121,
+    #1b1b1b,
+    #141414,
+    #0c0c0c,
+    #000000
+  );
+  cursor: pointer;
+}
+.btn-mode i {
+  pointer-events: none;
+}
+
+.btn-mode-active {
+  color: #ae3535;
+  box-shadow: inset -1px -1px 5px #5b5b5b, inset 1px 1px 5px #000;
+  cursor: auto;
+  transform: scale(0.99);
+}
+
+.btn-mode-active i {
+  background: -webkit-linear-gradient(#ae3535, #7a1919);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.control-btns {
+  width: 5rem;
+  height: 5rem;
+  background-color: black;
+  margin: 5px;
+  border-radius: 10px;
+  color: #a49fa1;
+  text-align: center;
+  line-height: 5rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(
+    to right bottom,
+    #212121,
+    #1b1b1b,
+    #141414,
+    #0c0c0c,
+    #000000
+  );
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+.control-btns:hover {
+  color: white;
+  background-image: linear-gradient(
+    to right bottom,
+    #2e2e2e,
+    #262626,
+    #1f1f1f,
+    #181818,
+    #101010
+  );
+}
+
+.control-btns:active {
+  box-shadow: inset -1px -1px 4px #5b5b5b, inset 1px 1px 4px #000;
+  transform: scale(0.99);
+}
+
+.btn-mode:hover:not(.btn-mode-active) {
+  background-image: linear-gradient(
+    to right bottom,
+    #2e2e2e,
+    #262626,
+    #1f1f1f,
+    #181818,
+    #101010
+  );
+}
+
+/* Displays */
+/* Basic Display */
+.basic--display {
+  height: 100%;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  color: #a49fa1;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.retirement-display {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #a49fa1;
+}
+
+.mortgage-display {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #a49fa1;
+}
+
+.display-active {
+  display: flex;
+}
+
+.main-output {
+  text-align: right;
+  width: 100%;
+  font-size: 3rem;
+  overflow-wrap: break-word;
+}
+
+.mortgage-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.retirement-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .mortgage-form input {
+  height: 3rem;
+  margin: 2rem 0;
+}
+*/
+
+.mortgage-form select {
+  width: 250px;
+  margin: 2.2rem 0 0;
+  font-size: 2rem;
+  color: #aaa;
+  background-image: linear-gradient(
+    to right bottom,
+    #363636,
+    #2e2e2e,
+    #272727,
+    #1f1f1f,
+    #181818
+  );
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  padding: 1.2rem;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-arrow {
+  display: flex;
+  position: absolute;
+  top: 2.2rem;
+  right: 0;
+  background-color: #1c1c1c;
+  height: calc(100% - 2.2rem);
+  width: 4rem;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  font-size: 2.5rem;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-arrow i {
+  background: -webkit-linear-gradient(#ae3535, #7a1919);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mortgage-submit,
+.retirement-submit {
+  margin: 2.2rem 0;
+  width: 25rem;
+  height: 4rem;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right bottom,
+    #9e2626,
+    #902020,
+    #821a1a,
+    #741414,
+    #670e0e
+  );
+  font-size: 2rem;
+  color: #aaa;
+}
+
+/* Remove arrows for number input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.custom-field {
+  position: relative;
+  font-size: 2rem;
+  margin: 2.2rem 0 0;
+}
+
+.custom-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: linear-gradient(
+    to right bottom,
+    #363636,
+    #2e2e2e,
+    #272727,
+    #1f1f1f,
+    #181818
+  );
+  padding: 1.2rem;
+  border-radius: 3px;
+  width: 250px;
+  outline: none;
+  font-size: 2rem;
+  color: #aaa;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: 1.2rem;
+  top: 22px;
+  line-height: 100%;
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+
+.custom-field input:focus + .placeholder,
+.custom-field input:not(:placeholder-shown) + .placeholder {
+  top: -12px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.age-container {
+  display: flex;
+}
+
+.current-age input {
+  width: 6rem;
+  margin-right: 0.7rem;
+}
+
+.retirement-age input {
+  width: 20rem;
+}
+
+.mortgage-form--title,
+.retirement--title {
+  font-size: 2rem;
+}
+
+.retirement--title {
+  margin-top: 2.2rem;
+}
+
+.retirement-output,
+.mortgage-output {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
